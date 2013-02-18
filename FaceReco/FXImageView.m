@@ -47,6 +47,7 @@
 
 @property (nonatomic, strong) UIImage *originalImage;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIView *facesView;
 @property (nonatomic, strong) NSURL *imageContentURL;
 
 - (void)processImage;
@@ -135,6 +136,8 @@
     [self setImage:super.image];
 	[self setTransform:CGAffineTransformMakeScale(1, -1)];
     super.image = nil;
+	_facesView = [[UIView alloc] initWithFrame:self.bounds];
+	[self addSubview:_facesView];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -275,20 +278,28 @@
         //set processed image
         [self willChangeValueForKey:@"processedImage"];
         _imageView.image = processedImage;
-		[self markFaces:processedImage.CGImage];
+		[self markFaces];
         [self didChangeValueForKey:@"processedImage"];
     }
 }
 
-- (void)markFaces:(CGImageRef)CGImage
+- (void)markFaces
 {
+	for (UIView *view in _facesView.subviews) {
+		[view removeFromSuperview];
+	}
+	CGImageRef CGImage = _imageView.image.CGImage;
     // draw a CI image with the previously loaded face detection picture
     CIImage* image = [CIImage imageWithCGImage:CGImage];
     
+	NSLog(@"frame:%@ image:@%@", NSStringFromCGRect(_imageView.frame), NSStringFromCGSize(_imageView.image.size));
     // create a face detector - since speed is not an issue we'll use a high accuracy
     // detector
+	CGFloat dh = _imageView.bounds.size.height - _imageView.image.size.height;
+	CGFloat dw = _imageView.bounds.size.width - _imageView.image.size.width;
+	
     CIDetector* detector = [CIDetector detectorOfType:CIDetectorTypeFace
-                                              context:nil options:[NSDictionary dictionaryWithObject:CIDetectorAccuracyHigh forKey:CIDetectorAccuracy]];
+                                              context:nil options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
     
     // create an array containing all the detected faces from the detector
     NSArray* features = [detector featuresInImage:image];
@@ -297,60 +308,84 @@
     // with the width for the entire face, and the coordinates of each eye
     // and the mouth if detected.  Also provided are BOOL's for the eye's and
     // mouth so we can check if they already exist.
+
+	CGPoint(^fpoint)(CGPoint) = ^(CGPoint p) {
+		return CGPointMake((p.x + dw) / 2, (p.y + dh) / 2);
+	};
+	
+	CGSize(^fsize)(CGSize) = ^(CGSize s) {
+		return CGSizeMake(s.width / 2, s.height / 2);
+	};
+	CGRect(^frect)(CGRect) = ^(CGRect r) {
+		r.origin = fpoint(r.origin);
+		r.size = fsize(r.size);
+		return r;
+	};
+	
     for(CIFaceFeature *faceFeature in features)
     {
         // get the width of the face
-        CGFloat faceWidth = faceFeature.bounds.size.width;
         
         // create a UIView using the bounds of the face
-        UIView *faceView = [[UIView alloc] initWithFrame:faceFeature.bounds];
+		CGRect bounds = frect(faceFeature.bounds);
+		CGFloat faceWidth = bounds.size.width;
+        UIView *faceView = [[UIView alloc] initWithFrame:bounds];
         // add a border around the newly created UIView
         faceView.layer.borderWidth = 1;
         faceView.layer.borderColor = [[UIColor redColor] CGColor];
         
         // add the new view to create a box around the face
-        [self addSubview:faceView];
+        [_facesView addSubview:faceView];
         
         if(faceFeature.hasLeftEyePosition)
         {
             // create a UIView with a size based on the width of the face
-            UIView *leftEyeView = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.leftEyePosition.x-faceWidth*0.15, faceFeature.leftEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+//			CGRect bounds = CGRectMake(faceFeature.leftEyePosition.x/2 -faceWidth*0.15, faceFeature.leftEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*0.3);
+			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.leftEyePosition), .size=CGSizeZero};
+			CGFloat radius = faceWidth * .15;
+			bounds = CGRectInset(bounds, -radius, -radius);
+            UIView *leftEyeView = [[UIView alloc] initWithFrame:bounds];
             // change the background color of the eye view
             [leftEyeView setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
-            // set the position of the leftEyeView based on the face
-            [leftEyeView setCenter:faceFeature.leftEyePosition];
             // round the corners
-            leftEyeView.layer.cornerRadius = faceWidth*0.15;
+            leftEyeView.layer.cornerRadius = radius;
             // add the view to the window
-            [self addSubview:leftEyeView];
+            [_facesView addSubview:leftEyeView];
         }
         
         if(faceFeature.hasRightEyePosition)
         {
             // create a UIView with a size based on the width of the face
-            UIView* leftEye = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.rightEyePosition.x-faceWidth*0.15, faceFeature.rightEyePosition.y-faceWidth*0.15, faceWidth*0.3, faceWidth*0.3)];
+//			CGRect bounds = CGRectMake(faceFeature.rightEyePosition.x/2 -faceWidth*.15, faceFeature.rightEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*.3);
+			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.rightEyePosition), .size=CGSizeZero};
+			CGFloat radius = faceWidth * .15;
+			bounds = CGRectInset(bounds, -radius, -radius);
+
+            UIView* leftEye = [[UIView alloc] initWithFrame:bounds];
             // change the background color of the eye view
             [leftEye setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
-            // set the position of the rightEyeView based on the face
-            [leftEye setCenter:faceFeature.rightEyePosition];
             // round the corners
-            leftEye.layer.cornerRadius = faceWidth*0.15;
+            leftEye.layer.cornerRadius = radius;
             // add the new view to the window
-            [self addSubview:leftEye];
+            [_facesView addSubview:leftEye];
         }
         
         if(faceFeature.hasMouthPosition)
         {
             // create a UIView with a size based on the width of the face
-            UIView* mouth = [[UIView alloc] initWithFrame:CGRectMake(faceFeature.mouthPosition.x-faceWidth*0.2, faceFeature.mouthPosition.y-faceWidth*0.2, faceWidth*0.4, faceWidth*0.4)];
+//			CGRect bounds = CGRectMake(faceFeature.mouthPosition.x/2 -faceWidth*.2, faceFeature.mouthPosition.y/2-faceWidth*.2, faceWidth*.4, faceWidth*.4);
+
+			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.mouthPosition), .size=CGSizeZero};
+			CGFloat radius = faceWidth * .2;
+			bounds = CGRectInset(bounds, -radius, -radius);
+
+            UIView* mouth = [[UIView alloc] initWithFrame:bounds];
             // change the background color for the mouth to green
             [mouth setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.3]];
-            // set the position of the mouthView based on the face
-            [mouth setCenter:faceFeature.mouthPosition];
             // round the corners
-            mouth.layer.cornerRadius = faceWidth*0.2;
+            mouth.layer.cornerRadius = radius;
             // add the new view to the window
-            [self addSubview:mouth];
+            [_facesView addSubview:mouth];
         }
     }
 }
@@ -455,7 +490,7 @@
         }
         [self willChangeValueForKey:@"processedImage"];
         _imageView.image = processedImage;
-		[self markFaces:processedImage.CGImage];
+		[self markFaces];
         [self didChangeValueForKey:@"processedImage"];
     }
     else
