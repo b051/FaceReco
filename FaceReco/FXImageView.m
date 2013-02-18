@@ -308,7 +308,7 @@
     // with the width for the entire face, and the coordinates of each eye
     // and the mouth if detected.  Also provided are BOOL's for the eye's and
     // mouth so we can check if they already exist.
-
+	
 	CGPoint(^fpoint)(CGPoint) = ^(CGPoint p) {
 		return CGPointMake((p.x + dw) / 2, (p.y + dh) / 2);
 	};
@@ -327,9 +327,9 @@
         // get the width of the face
         
         // create a UIView using the bounds of the face
-		CGRect bounds = frect(faceFeature.bounds);
-		CGFloat faceWidth = bounds.size.width;
-        UIView *faceView = [[UIView alloc] initWithFrame:bounds];
+		CGRect faceBounds = frect(faceFeature.bounds);
+		CGFloat faceWidth = faceBounds.size.width;
+        UIView *faceView = [[UIView alloc] initWithFrame:faceBounds];
         // add a border around the newly created UIView
         faceView.layer.borderWidth = 1;
         faceView.layer.borderColor = [[UIColor redColor] CGColor];
@@ -340,7 +340,7 @@
         if(faceFeature.hasLeftEyePosition)
         {
             // create a UIView with a size based on the width of the face
-//			CGRect bounds = CGRectMake(faceFeature.leftEyePosition.x/2 -faceWidth*0.15, faceFeature.leftEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*0.3);
+			//			CGRect bounds = CGRectMake(faceFeature.leftEyePosition.x/2 -faceWidth*0.15, faceFeature.leftEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*0.3);
 			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.leftEyePosition), .size=CGSizeZero};
 			CGFloat radius = faceWidth * .15;
 			bounds = CGRectInset(bounds, -radius, -radius);
@@ -356,11 +356,11 @@
         if(faceFeature.hasRightEyePosition)
         {
             // create a UIView with a size based on the width of the face
-//			CGRect bounds = CGRectMake(faceFeature.rightEyePosition.x/2 -faceWidth*.15, faceFeature.rightEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*.3);
+			//			CGRect bounds = CGRectMake(faceFeature.rightEyePosition.x/2 -faceWidth*.15, faceFeature.rightEyePosition.y/2-faceWidth*.15, faceWidth*.3, faceWidth*.3);
 			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.rightEyePosition), .size=CGSizeZero};
 			CGFloat radius = faceWidth * .15;
 			bounds = CGRectInset(bounds, -radius, -radius);
-
+			
             UIView* leftEye = [[UIView alloc] initWithFrame:bounds];
             // change the background color of the eye view
             [leftEye setBackgroundColor:[[UIColor blueColor] colorWithAlphaComponent:0.3]];
@@ -373,12 +373,12 @@
         if(faceFeature.hasMouthPosition)
         {
             // create a UIView with a size based on the width of the face
-//			CGRect bounds = CGRectMake(faceFeature.mouthPosition.x/2 -faceWidth*.2, faceFeature.mouthPosition.y/2-faceWidth*.2, faceWidth*.4, faceWidth*.4);
-
+			//			CGRect bounds = CGRectMake(faceFeature.mouthPosition.x/2 -faceWidth*.2, faceFeature.mouthPosition.y/2-faceWidth*.2, faceWidth*.4, faceWidth*.4);
+			
 			CGRect bounds = (CGRect) {.origin=fpoint(faceFeature.mouthPosition), .size=CGSizeZero};
 			CGFloat radius = faceWidth * .2;
 			bounds = CGRectInset(bounds, -radius, -radius);
-
+			
             UIView* mouth = [[UIView alloc] initWithFrame:bounds];
             // change the background color for the mouth to green
             [mouth setBackgroundColor:[[UIColor greenColor] colorWithAlphaComponent:0.3]];
@@ -387,7 +387,30 @@
             // add the new view to the window
             [_facesView addSubview:mouth];
         }
-    }
+		if (faceFeature.hasMouthPosition && faceFeature.hasLeftEyePosition && faceFeature.hasRightEyePosition) {
+			CGPoint a = faceFeature.leftEyePosition;
+			CGPoint b = faceFeature.rightEyePosition;
+			CGPoint c = faceFeature.mouthPosition;
+			CGFloat ab = pow(b.x - a.x, 2) + pow(b.y - a.y, 2);
+			CGFloat ac = pow(c.x - a.x, 2) + pow(c.y - a.y, 2);
+			CGFloat bc = pow(c.x - b.x, 2) + pow(c.y - b.y, 2);
+			CGFloat angleC = acos((ac + bc - ab)/(2 * sqrt(ac * bc))) / M_PI * 180;
+			CGFloat angleB = acos((ab + bc - ac)/(2 * sqrt(ab * bc))) / M_PI * 180;
+			CGRect frame = faceView.frame;
+			frame.size.width = 200;
+			frame.size.height = 50;
+			UILabel *label = [[UILabel alloc] initWithFrame:frame];
+			[_facesView addSubview:label];
+
+			label.backgroundColor = [UIColor clearColor];
+			label.text = [NSString stringWithFormat:@"mouth:%.2f\neye(r):%.2f", angleC, angleB];
+			label.numberOfLines = 2;
+			label.font = [UIFont fontWithName:@"Futura-CondensedMedium" size:11];
+			label.shadowColor = [UIColor darkGrayColor];
+			label.textColor = [UIColor whiteColor];
+			label.transform = CGAffineTransformMakeScale(1, -1);
+		}
+	}
 }
 
 - (void)processImage
