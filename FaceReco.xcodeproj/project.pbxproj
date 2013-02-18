@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF1DDEE816D1BB7200FF6C77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1DDEE716D1BB7200FF6C77 /* UIKit.framework */; };
+		CF1DDEEA16D1BB7200FF6C77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1DDEE916D1BB7200FF6C77 /* Foundation.framework */; };
+		CF1DDEEC16D1BB7200FF6C77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1DDEEB16D1BB7200FF6C77 /* CoreGraphics.framework */; };
+		CF1DDEF216D1BB7200FF6C77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEF016D1BB7200FF6C77 /* InfoPlist.strings */; };
+		CF1DDEF416D1BB7200FF6C77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDEF316D1BB7200FF6C77 /* main.m */; };
+		CF1DDEF816D1BB7200FF6C77 /* FRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDEF716D1BB7200FF6C77 /* FRAppDelegate.m */; };
+		CF1DDEFA16D1BB7200FF6C77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEF916D1BB7200FF6C77 /* Default.png */; };
+		CF1DDEFC16D1BB7200FF6C77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEFB16D1BB7200FF6C77 /* Default@2x.png */; };
+		CF1DDEFE16D1BB7200FF6C77 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CF1DDEE416D1BB7200FF6C77 /* FaceReco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceReco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF1DDEE716D1BB7200FF6C77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF1DDEE916D1BB7200FF6C77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF1DDEEB16D1BB7200FF6C77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CF1DDEEF16D1BB7200FF6C77 /* FaceReco-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaceReco-Info.plist"; sourceTree = "<group>"; };
+		CF1DDEF116D1BB7200FF6C77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF1DDEF316D1BB7200FF6C77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF1DDEF516D1BB7200FF6C77 /* FaceReco-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceReco-Prefix.pch"; sourceTree = "<group>"; };
+		CF1DDEF616D1BB7200FF6C77 /* FRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = FRAppDelegate.h; sourceTree = "<group>"; };
+		CF1DDEF716D1BB7200FF6C77 /* FRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FRAppDelegate.m; sourceTree = "<group>"; };
+		CF1DDEF916D1BB7200FF6C77 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		CF1DDEFB16D1BB7200FF6C77 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF1DDEE116D1BB7200FF6C77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF1DDEE816D1BB7200FF6C77 /* UIKit.framework in Frameworks */,
+				CF1DDEEA16D1BB7200FF6C77 /* Foundation.framework in Frameworks */,
+				CF1DDEEC16D1BB7200FF6C77 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF1DDEDB16D1BB7200FF6C77 = {
+			isa = PBXGroup;
+			children = (
+				CF1DDEED16D1BB7200FF6C77 /* FaceReco */,
+				CF1DDEE616D1BB7200FF6C77 /* Frameworks */,
+				CF1DDEE516D1BB7200FF6C77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF1DDEE516D1BB7200FF6C77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF1DDEE416D1BB7200FF6C77 /* FaceReco.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1DDEE616D1BB7200FF6C77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF1DDEE716D1BB7200FF6C77 /* UIKit.framework */,
+				CF1DDEE916D1BB7200FF6C77 /* Foundation.framework */,
+				CF1DDEEB16D1BB7200FF6C77 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF1DDEED16D1BB7200FF6C77 /* FaceReco */ = {
+			isa = PBXGroup;
+			children = (
+				CF1DDEF616D1BB7200FF6C77 /* FRAppDelegate.h */,
+				CF1DDEF716D1BB7200FF6C77 /* FRAppDelegate.m */,
+				CF1DDEEE16D1BB7200FF6C77 /* Supporting Files */,
+			);
+			path = FaceReco;
+			sourceTree = "<group>";
+		};
+		CF1DDEEE16D1BB7200FF6C77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF1DDEEF16D1BB7200FF6C77 /* FaceReco-Info.plist */,
+				CF1DDEF016D1BB7200FF6C77 /* InfoPlist.strings */,
+				CF1DDEF316D1BB7200FF6C77 /* main.m */,
+				CF1DDEF516D1BB7200FF6C77 /* FaceReco-Prefix.pch */,
+				CF1DDEF916D1BB7200FF6C77 /* Default.png */,
+				CF1DDEFB16D1BB7200FF6C77 /* Default@2x.png */,
+				CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF1DDEE316D1BB7200FF6C77 /* FaceReco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF1DDF0116D1BB7200FF6C77 /* Build configuration list for PBXNativeTarget "FaceReco" */;
+			buildPhases = (
+				CF1DDEE016D1BB7200FF6C77 /* Sources */,
+				CF1DDEE116D1BB7200FF6C77 /* Frameworks */,
+				CF1DDEE216D1BB7200FF6C77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaceReco;
+			productName = FaceReco;
+			productReference = CF1DDEE416D1BB7200FF6C77 /* FaceReco.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF1DDEDC16D1BB7200FF6C77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FR;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = lognllc.com;
+			};
+			buildConfigurationList = CF1DDEDF16D1BB7200FF6C77 /* Build configuration list for PBXProject "FaceReco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1DDEDB16D1BB7200FF6C77;
+			productRefGroup = CF1DDEE516D1BB7200FF6C77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF1DDEE316D1BB7200FF6C77 /* FaceReco */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF1DDEE216D1BB7200FF6C77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF1DDEF216D1BB7200FF6C77 /* InfoPlist.strings in Resources */,
+				CF1DDEFA16D1BB7200FF6C77 /* Default.png in Resources */,
+				CF1DDEFC16D1BB7200FF6C77 /* Default@2x.png in Resources */,
+				CF1DDEFE16D1BB7200FF6C77 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF1DDEE016D1BB7200FF6C77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF1DDEF416D1BB7200FF6C77 /* main.m in Sources */,
+				CF1DDEF816D1BB7200FF6C77 /* FRAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CF1DDEF016D1BB7200FF6C77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF1DDEF116D1BB7200FF6C77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CF1DDEFF16D1BB7200FF6C77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF1DDF0016D1BB7200FF6C77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF1DDF0216D1BB7200FF6C77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceReco/FaceReco-Prefix.pch";
+				INFOPLIST_FILE = "FaceReco/FaceReco-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CF1DDF0316D1BB7200FF6C77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceReco/FaceReco-Prefix.pch";
+				INFOPLIST_FILE = "FaceReco/FaceReco-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF1DDEDF16D1BB7200FF6C77 /* Build configuration list for PBXProject "FaceReco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF1DDEFF16D1BB7200FF6C77 /* Debug */,
+				CF1DDF0016D1BB7200FF6C77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF1DDF0116D1BB7200FF6C77 /* Build configuration list for PBXNativeTarget "FaceReco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF1DDF0216D1BB7200FF6C77 /* Debug */,
+				CF1DDF0316D1BB7200FF6C77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF1DDEDC16D1BB7200FF6C77 /* Project object */;
+}
