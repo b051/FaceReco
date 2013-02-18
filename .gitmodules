@@ -1,0 +1,3 @@
+[submodule "iCarousel"]
+	path = iCarousel
+	url = git://github.com/nicklockwood/iCarousel.git

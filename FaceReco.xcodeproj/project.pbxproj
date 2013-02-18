@@ -16,6 +16,17 @@
 		CF1DDEFA16D1BB7200FF6C77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEF916D1BB7200FF6C77 /* Default.png */; };
 		CF1DDEFC16D1BB7200FF6C77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEFB16D1BB7200FF6C77 /* Default@2x.png */; };
 		CF1DDEFE16D1BB7200FF6C77 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */; };
+		CF1DDF0516D1C1D300FF6C77 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF1DDF0416D1C1D300FF6C77 /* AssetsLibrary.framework */; };
+		CF1DDF0916D1C29A00FF6C77 /* FRAssetsGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1DDF0716D1C29A00FF6C77 /* FRAssetsGroupViewController.m */; };
+		CF3BE4FB16D1CC6E007EB469 /* FRAssetsGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE4FA16D1CC6E007EB469 /* FRAssetsGroupCell.m */; };
+		CF3BE4FE16D1D8B7007EB469 /* album_black-iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3BE4FC16D1D8B7007EB469 /* album_black-iphone.png */; };
+		CF3BE4FF16D1D8B7007EB469 /* album_black-iphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3BE4FD16D1D8B7007EB469 /* album_black-iphone@2x.png */; };
+		CF3BE50216D1DD92007EB469 /* FRAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE50116D1DD92007EB469 /* FRAssetsViewController.m */; };
+		CF3BE50616D1E1B0007EB469 /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE50516D1E1B0007EB469 /* iCarousel.m */; };
+		CF3BE50B16D1E31B007EB469 /* FXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE50816D1E31A007EB469 /* FXImageView.m */; };
+		CF3BE50C16D1E31B007EB469 /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3BE50A16D1E31B007EB469 /* UIImage+FX.m */; };
+		CF3BE50E16D1E3D4007EB469 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3BE50D16D1E3D4007EB469 /* QuartzCore.framework */; };
+		CF3BE51016D2034E007EB469 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF3BE50F16D2034E007EB469 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +43,23 @@
 		CF1DDEF916D1BB7200FF6C77 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CF1DDEFB16D1BB7200FF6C77 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CF1DDF0416D1C1D300FF6C77 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		CF1DDF0616D1C29A00FF6C77 /* FRAssetsGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = FRAssetsGroupViewController.h; sourceTree = "<group>"; };
+		CF1DDF0716D1C29A00FF6C77 /* FRAssetsGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAssetsGroupViewController.m; sourceTree = "<group>"; };
+		CF3BE4F916D1CC6E007EB469 /* FRAssetsGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAssetsGroupCell.h; sourceTree = "<group>"; };
+		CF3BE4FA16D1CC6E007EB469 /* FRAssetsGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAssetsGroupCell.m; sourceTree = "<group>"; };
+		CF3BE4FC16D1D8B7007EB469 /* album_black-iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "album_black-iphone.png"; path = "FaceReco/album_black-iphone.png"; sourceTree = "<group>"; };
+		CF3BE4FD16D1D8B7007EB469 /* album_black-iphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "album_black-iphone@2x.png"; path = "FaceReco/album_black-iphone@2x.png"; sourceTree = "<group>"; };
+		CF3BE50016D1DD92007EB469 /* FRAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRAssetsViewController.h; sourceTree = "<group>"; };
+		CF3BE50116D1DD92007EB469 /* FRAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRAssetsViewController.m; sourceTree = "<group>"; };
+		CF3BE50416D1E1B0007EB469 /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		CF3BE50516D1E1B0007EB469 /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		CF3BE50716D1E31A007EB469 /* FXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXImageView.h; sourceTree = "<group>"; };
+		CF3BE50816D1E31A007EB469 /* FXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXImageView.m; sourceTree = "<group>"; };
+		CF3BE50916D1E31A007EB469 /* UIImage+FX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FX.h"; sourceTree = "<group>"; };
+		CF3BE50A16D1E31B007EB469 /* UIImage+FX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FX.m"; sourceTree = "<group>"; };
+		CF3BE50D16D1E3D4007EB469 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CF3BE50F16D2034E007EB469 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3BE51016D2034E007EB469 /* CoreImage.framework in Frameworks */,
+				CF3BE50E16D1E3D4007EB469 /* QuartzCore.framework in Frameworks */,
+				CF1DDF0516D1C1D300FF6C77 /* AssetsLibrary.framework in Frameworks */,
 				CF1DDEE816D1BB7200FF6C77 /* UIKit.framework in Frameworks */,
 				CF1DDEEA16D1BB7200FF6C77 /* Foundation.framework in Frameworks */,
 				CF1DDEEC16D1BB7200FF6C77 /* CoreGraphics.framework in Frameworks */,
@@ -52,6 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				CF1DDEED16D1BB7200FF6C77 /* FaceReco */,
+				CF3BE4FC16D1D8B7007EB469 /* album_black-iphone.png */,
+				CF3BE4FD16D1D8B7007EB469 /* album_black-iphone@2x.png */,
+				CF3BE50316D1E1B0007EB469 /* iCarousel */,
 				CF1DDEE616D1BB7200FF6C77 /* Frameworks */,
 				CF1DDEE516D1BB7200FF6C77 /* Products */,
 			);
@@ -68,6 +102,9 @@
 		CF1DDEE616D1BB7200FF6C77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF3BE50F16D2034E007EB469 /* CoreImage.framework */,
+				CF3BE50D16D1E3D4007EB469 /* QuartzCore.framework */,
+				CF1DDF0416D1C1D300FF6C77 /* AssetsLibrary.framework */,
 				CF1DDEE716D1BB7200FF6C77 /* UIKit.framework */,
 				CF1DDEE916D1BB7200FF6C77 /* Foundation.framework */,
 				CF1DDEEB16D1BB7200FF6C77 /* CoreGraphics.framework */,
@@ -80,6 +117,16 @@
 			children = (
 				CF1DDEF616D1BB7200FF6C77 /* FRAppDelegate.h */,
 				CF1DDEF716D1BB7200FF6C77 /* FRAppDelegate.m */,
+				CF1DDF0616D1C29A00FF6C77 /* FRAssetsGroupViewController.h */,
+				CF1DDF0716D1C29A00FF6C77 /* FRAssetsGroupViewController.m */,
+				CF3BE4F916D1CC6E007EB469 /* FRAssetsGroupCell.h */,
+				CF3BE4FA16D1CC6E007EB469 /* FRAssetsGroupCell.m */,
+				CF3BE50016D1DD92007EB469 /* FRAssetsViewController.h */,
+				CF3BE50116D1DD92007EB469 /* FRAssetsViewController.m */,
+				CF3BE50716D1E31A007EB469 /* FXImageView.h */,
+				CF3BE50816D1E31A007EB469 /* FXImageView.m */,
+				CF3BE50916D1E31A007EB469 /* UIImage+FX.h */,
+				CF3BE50A16D1E31B007EB469 /* UIImage+FX.m */,
 				CF1DDEEE16D1BB7200FF6C77 /* Supporting Files */,
 			);
 			path = FaceReco;
@@ -97,6 +144,16 @@
 				CF1DDEFD16D1BB7200FF6C77 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF3BE50316D1E1B0007EB469 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				CF3BE50416D1E1B0007EB469 /* iCarousel.h */,
+				CF3BE50516D1E1B0007EB469 /* iCarousel.m */,
+			);
+			name = iCarousel;
+			path = iCarousel/iCarousel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +212,8 @@
 				CF1DDEFA16D1BB7200FF6C77 /* Default.png in Resources */,
 				CF1DDEFC16D1BB7200FF6C77 /* Default@2x.png in Resources */,
 				CF1DDEFE16D1BB7200FF6C77 /* Default-568h@2x.png in Resources */,
+				CF3BE4FE16D1D8B7007EB469 /* album_black-iphone.png in Resources */,
+				CF3BE4FF16D1D8B7007EB469 /* album_black-iphone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +226,12 @@
 			files = (
 				CF1DDEF416D1BB7200FF6C77 /* main.m in Sources */,
 				CF1DDEF816D1BB7200FF6C77 /* FRAppDelegate.m in Sources */,
+				CF1DDF0916D1C29A00FF6C77 /* FRAssetsGroupViewController.m in Sources */,
+				CF3BE4FB16D1CC6E007EB469 /* FRAssetsGroupCell.m in Sources */,
+				CF3BE50216D1DD92007EB469 /* FRAssetsViewController.m in Sources */,
+				CF3BE50616D1E1B0007EB469 /* iCarousel.m in Sources */,
+				CF3BE50B16D1E31B007EB469 /* FXImageView.m in Sources */,
+				CF3BE50C16D1E31B007EB469 /* UIImage+FX.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +346,7 @@
 				CF1DDF0316D1BB7200FF6C77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
